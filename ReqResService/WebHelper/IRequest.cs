@@ -102,8 +102,26 @@ namespace ThirdPartyWrapper.Service.WebHelper
         /// </summary>
         /// <seealso cref="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.cookiecontainer%28v=vs.110%29.aspx"/>
         ICollection<Cookie> Cookies { get; set; }
-        Dictionary<string, string> Headers { get; set; }
-        string CustomHeader { get; set; }
+
+        /// <summary>
+        /// Custom headers
+        /// </summary>
+        Dictionary<string, string> CustomHeaders { get; set; }
+
+        /// <summary>
+        /// Comma separated name-value pairs
+        /// 
+        /// Example : Authorization header for oauth : 
+        /// Authorization: OAuth realm="",
+        /// oauth_nonce="72250409",
+        /// oauth_timestamp="1294966759",
+        /// oauth_consumer_key="Dummy",
+        /// oauth_signature_method="HMAC-SHA1",
+        /// oauth_version="1.0",
+        /// oauth_signature="IBlWhOm3PuDwaSdxE/Qu4RKPtVE="
+        /// </summary>
+        string AuthorizationHeader { get; set; }
+
         Dictionary<string, string> Parameters { get; set; }
         bool IsWebProxy { get; set; }
     }

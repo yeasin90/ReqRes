@@ -11,7 +11,7 @@ namespace ThirdPartyWrapper.Service.WebHelper
     {
         public Request()
         {
-            Headers = new Dictionary<string, string>();
+            CustomHeaders = new Dictionary<string, string>();
             Parameters = new Dictionary<string, string>();
             Cookies = new List<Cookie>();
         }
@@ -25,8 +25,8 @@ namespace ThirdPartyWrapper.Service.WebHelper
         public Uri RelaitvePath { get; set; }
 
         public ICollection<Cookie> Cookies { get; set; }
-        public Dictionary<string, string> Headers { get; set; }
-        public string CustomHeader { get; set; }
+        public Dictionary<string, string> CustomHeaders { get; set; }
+        public string AuthorizationHeader { get; set; }
         public Dictionary<string, string> Parameters { get; set; }
         public bool IsWebProxy { get; set; }
     }

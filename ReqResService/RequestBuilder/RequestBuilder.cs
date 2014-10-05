@@ -18,9 +18,18 @@ namespace ThirdPartyWrapper.Service.RequestBuilder
                 return value;
             };
 
-            if (!string.IsNullOrWhiteSpace(request.CustomHeader))
-                httpWebRequest.Headers.Add(request.CustomHeader);
+            if (!string.IsNullOrWhiteSpace(request.AuthorizationHeader))
+                httpWebRequest.Headers.Add(request.AuthorizationHeader);
 
+
+            if (request.CustomHeaders != null && request.CustomHeaders.Count != 0)
+            {
+                foreach (KeyValuePair<string, string> customHeader in request.CustomHeaders)
+                {
+                    httpWebRequest.Headers.Add(customHeader.Key, customHeader.Value);
+                }
+                //httpWebRequest.Headers.Add(
+            }
             /*
             if (request.Headers.Count != 0)
             {
