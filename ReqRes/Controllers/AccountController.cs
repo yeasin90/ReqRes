@@ -21,6 +21,13 @@ namespace ReqRes.Controllers
         // GET: /Account/Login
 
         [AllowAnonymous]
+        public ActionResult Index()
+        {
+            throw new Exception("opps!!");
+            return Content("You have entered Account");
+        }
+
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

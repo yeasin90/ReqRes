@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using ReqRes.ActionAttribute;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ReqRes
@@ -8,6 +9,7 @@ namespace ReqRes
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new LogAttribute());
         }
     }
 }
