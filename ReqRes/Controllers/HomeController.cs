@@ -67,6 +67,16 @@ namespace ReqRes.Controllers
                 req2.Parameters.Add("client_secret", "0e7a8a6d33e73259270dfb20086bce6ff8fc9cc3");
 
                 response = _webClient.SendRequest(req2);
+
+                IRequest req3 = new Request();
+                req3.HostAddress = new Uri("https://api.github.com", UriKind.Absolute);
+                req3.RelaitvePath = new Uri("repositories", UriKind.Relative);
+                req3.Method = "GET";
+                req3.UserAgent = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36";
+                req3.Parameters.Add("client_id", "44d438b1f78370780086");
+                req3.Parameters.Add("client_secret", "0e7a8a6d33e73259270dfb20086bce6ff8fc9cc3");
+
+                response = _webClient.SendRequest(req3);
             }
             return RedirectToAction("Index", "Home");
         }
