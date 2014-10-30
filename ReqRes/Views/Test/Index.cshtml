@@ -1,0 +1,18 @@
+﻿@model ReqRes.Models.TestModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <span>Name : @Model.Name</span><br />
+    <span>Salary : @Model.Salary</span><br />
+    <span>Time : @Model.CurrentTime</span>
+</div>
+
+<br />
+<hr />
+
+@Html.Action("CacheView")
+

@@ -20,6 +20,11 @@ namespace ReqRes.Controllers
             return View();
         }
 
+        public ActionResult Table()
+        {
+            return View();
+        }
+
         public ActionResult UrlForGithubAuthorization()
         {
             return Redirect("https://github.com/login/oauth/authorize?client_id=44d438b1f78370780086&scope=user,repo");
